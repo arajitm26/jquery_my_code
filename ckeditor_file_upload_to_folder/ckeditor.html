@@ -1,0 +1,38 @@
+<html>
+<head>
+ <script src="http://cdn.ckeditor.com/4.6.2/standard-all/ckeditor.js"></script>
+  </head>
+<body>
+<form  action="index.php" method="POST"  style="width:500xp;">
+
+<textarea rows="5" name="content" id="content"></textarea>
+
+<br>
+<input type="submit" name="submit" value="Post">
+
+</form>
+<script>
+ CKEDITOR.replace( 'content', {
+  height: 300,
+  filebrowserUploadUrl: "http://localhost/ckeditor/upload.php"
+ });
+
+ CKEDITOR.on( 'dialogDefinition', function(e){
+     
+     dialogName=e.data.name;
+     dialogDefinition=e.data.definition;
+
+
+     // console.log(dialogDefinition);
+
+     if(dialogName == "image")
+     {
+       // dialogDefinition.removeContents('Link');
+       // dialogDefinition.removeContents('info');
+
+     }
+
+ });
+</script>
+</body>
+</html>
